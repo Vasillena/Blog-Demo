@@ -11,7 +11,7 @@ export default function Contact() {
         <h2
           className={`text-5xl md:text-6xl text-center lg:text-left ${dancePartner.className} mb-10`}
         >
-          Свържи се с мен
+          Contact
         </h2>
         <ContactForm />
       </div>
