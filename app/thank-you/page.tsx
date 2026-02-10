@@ -5,10 +5,10 @@ export default function ThankYouPage() {
     <div className="min-h-screen w-screen flex flex-col justify-center items-center">
       <h1 className="text-9xl">Thank you!</h1>
       <h4 className="text-2xl my-8">
-        Вашето съобщение беше изпратено успешно. Ще се свържа с Вас при първа
-        възможност =)
+        Your message has been sent successfully. I will contact you as soon as
+        possible =)
       </h4>
-      <MainButton text={"Начало"} href={"/"} />
+      <MainButton text={"Home"} href={"/"} />
     </div>
   );
 }

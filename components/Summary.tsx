@@ -25,8 +25,8 @@ export default async function Summary() {
           <table className="min-w-full table-auto">
             <thead>
               <tr className="bg-gray-200">
-                <th className="px-4 py-2 text-left">Описание</th>
-                <th className="px-4 py-2 text-left">Цена (лв)</th>
+                <th className="px-4 py-2 text-left">Description</th>
+                <th className="px-4 py-2 text-left">Price</th>
               </tr>
             </thead>
             <tbody>
@@ -37,10 +37,8 @@ export default async function Summary() {
                 </tr>
               ))}
               <tr>
-                <td className="px-4 py-2 font-bold">Общо</td>
-                <td className="px-4 py-2 font-bold">
-                  {totalPrice.toFixed(2)}лв
-                </td>
+                <td className="px-4 py-2 font-bold">Total</td>
+                <td className="px-4 py-2 font-bold">{totalPrice.toFixed(2)}</td>
               </tr>
             </tbody>
           </table>

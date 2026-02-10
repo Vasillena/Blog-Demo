@@ -35,15 +35,15 @@ export default function Sidebar({
         <div className="w-full mx-auto pt-20 pb-10">
           <div className="border-b border-[#222927]">
             <h2 className={`text-5xl text-center ${dancePartner.className}`}>
-              Лена
+              Lena
             </h2>
           </div>
-          <h2 className="text-2xl font-bold text-center">Категории</h2>
+          <h2 className="text-2xl font-bold text-center">Categories</h2>
         </div>
 
         <div className="text-3xl pl-4 mb-4">
-          <Link href="/">Начало</Link>
-          <Suspense fallback={<p>Категориите се зареждат...</p>}>
+          <Link href="/">Home</Link>
+          <Suspense fallback={<p>Loading categories...</p>}>
             <Categories />
           </Suspense>
         </div>

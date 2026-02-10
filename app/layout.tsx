@@ -15,29 +15,12 @@ import { Toaster } from "react-hot-toast";
 
 export const metadata: Metadata = {
   title: {
-    template: `%s | От инвитро до бебе`,
+    template: `%s | Demo Blog`,
     default: APP_NAME,
   },
   description: APP_DESCRIPTION,
-  keywords: [
-    "IVF",
-    "baby",
-    "blog",
-    "journey",
-    "pregnancy",
-    "motherhood",
-    "child",
-    "children",
-    "инвитро",
-    "бебе",
-    "пътешествие",
-    "бременност",
-    "майчинство",
-    "дете",
-    "деца",
-  ],
+  keywords: ["demo blog"],
   metadataBase: new URL(SERVER_URL),
-  // metadataBase: new URL("http://localhost:3000"),
 };
 
 export default function RootLayout({

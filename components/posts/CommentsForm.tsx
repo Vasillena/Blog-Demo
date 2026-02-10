@@ -28,7 +28,7 @@ export default function CommentsForm({ slug }: CommentsFormProps) {
     const desc = formData.get("message")?.toString().trim();
 
     if (!user || !desc) {
-      toast.error("Моля, попълнете всички полета");
+      toast.error("All fields must be filled.");
       setLoading(false);
       return;
     }
@@ -45,11 +45,11 @@ export default function CommentsForm({ slug }: CommentsFormProps) {
         return;
       }
 
-      toast.success("Коментарът е изпратен.");
+      toast.success("Comment sent.");
       formRef.current?.reset();
       startTransition(() => router.refresh());
     } catch {
-      toast.error("Възникна грешка при изпращането.");
+      toast.error("An error occurred while sending.");
     } finally {
       setLoading(false);
     }
@@ -59,7 +59,6 @@ export default function CommentsForm({ slug }: CommentsFormProps) {
     <form ref={formRef} onSubmit={handleSubmit}>
       <div className="relative">
         <input
-          // required
           id="user"
           name="user"
           aria-label="Name"
@@ -70,13 +69,12 @@ export default function CommentsForm({ slug }: CommentsFormProps) {
           htmlFor="user"
           className="absolute text-xl text-gray-500 duration-300 transform -translate-y-5 sm:-translate-y-4 scale-75 top-2 z-10 origin-[0] bg-[#eeeeed] px-2 peer-focus:px-2 peer-focus:text-[#415064] peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-6 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-5 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1"
         >
-          Име
+          Name
         </label>
       </div>
 
       <div className="relative mt-4">
         <textarea
-          // required
           id="message"
           name="message"
           aria-label="Message"
@@ -89,7 +87,7 @@ export default function CommentsForm({ slug }: CommentsFormProps) {
           htmlFor="message"
           className="absolute text-xl text-gray-500 duration-300 transform -translate-y-5 sm:-translate-y-4 scale-75 top-2 z-10 origin-[0] bg-[#eeeeed] px-2 peer-focus:px-2 peer-focus:text-[#415064] peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-6 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-5 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1"
         >
-          Здравейте...
+          Hi...
         </label>
       </div>
 
@@ -103,7 +101,7 @@ export default function CommentsForm({ slug }: CommentsFormProps) {
             <span
               className={`px-5 py-2 border-y border-l border-[#222927] text-2xl ${PhenomenaRegular.className}`}
             >
-              {loading ? "Изпращане..." : "Изпрати"}
+              {loading ? "Sending..." : "Send"}
             </span>
             <Image src={decor} alt="Decor" className="w-10 h-2" />
           </div>
@@ -112,7 +110,7 @@ export default function CommentsForm({ slug }: CommentsFormProps) {
 
       {loading && (
         <p className="mt-2 text-center text-lg text-gray-500">
-          Моля, изчакайте...
+          Please, wait...
         </p>
       )}
     </form>

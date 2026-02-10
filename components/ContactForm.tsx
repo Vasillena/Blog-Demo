@@ -5,6 +5,8 @@ import Image from "next/image";
 import { PhenomenaRegular } from "@/app/lib/fonts";
 import decor from "@/public/decor-2.png";
 
+const WEB3FORMS_KEY = process.env.NEXT_PUBLIC_WEB3FORMS_KEY!;
+
 export default function ContactForm() {
   function handleSubmit(e: any) {
     e.preventDefault();
@@ -16,27 +18,30 @@ export default function ContactForm() {
         Accept: "application/json",
       },
       body: JSON.stringify({
-        access_key: "ce3870b0-ae90-4a8c-b5d4-823aebe68f7d",
+        access_key: WEB3FORMS_KEY,
         name: e.target.name.value,
         email: e.target.email.value,
         message: e.target.message.value,
-        apikey: "ce3870b0-ae90-4a8c-b5d4-823aebe68f7d",
-        redirect: "https://ivf-journey.site/thank-you",
+        apikey: WEB3FORMS_KEY,
+        redirect: "https://blog-demo-pi-lac.vercel.app/thank-you",
       }),
     })
       .then((response) => response.json())
       .then((result) => {
         if (result.success) {
-          window.location.href = "https://ivf-journey.site/thank-you";
+          window.location.href =
+            "https://blog-demo-pi-lac.vercel.app/thank-you";
           console.log(result);
         } else {
           console.error("Form submission failed:", result);
-          window.location.href = "https://ivf-journey.site/form-failed";
+          window.location.href =
+            "https://blog-demo-pi-lac.vercel.app/form-failed";
         }
       })
       .catch((error) => {
         console.error("Error:", error);
-        window.location.href = "https://ivf-journey.site/form-failed";
+        window.location.href =
+          "https://blog-demo-pi-lac.vercel.app/form-failed";
       });
   }
 
@@ -58,7 +63,7 @@ export default function ContactForm() {
               htmlFor="name"
               className="absolute text-xl text-gray-500 duration-300 transform -translate-y-5 sm:-translate-y-4 scale-75 top-2 z-10 origin-left bg-[#eeeeed] px-2 peer-focus:px-2 peer-focus:text-[#415064] peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-5 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1"
             >
-              Име
+              Name
             </label>
           </div>
           <div className="relative">
@@ -94,7 +99,7 @@ export default function ContactForm() {
               htmlFor="message"
               className="absolute text-xl text-gray-500 duration-300 transform -translate-y-5 sm:-translate-y-4 scale-75 top-2 z-10 origin-left bg-[#eeeeed] px-2 peer-focus:px-2 peer-focus:text-[#415064] peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-6 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-5 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1"
             >
-              Здравейте...
+              Hi...
             </label>
           </div>
 
@@ -104,7 +109,7 @@ export default function ContactForm() {
                 <span
                   className={`px-5 py-2 border-y border-l border-[#222927] text-2xl ${PhenomenaRegular.className}`}
                 >
-                  Изпрати
+                  Send
                 </span>
                 <Image src={decor} alt="Decor" className="w-10 h-1" />
               </div>
@@ -113,15 +118,11 @@ export default function ContactForm() {
 
           <div>
             <label htmlFor="email" />
-            <input
-              type="hidden"
-              name="apikey"
-              value="ce3870b0-ae90-4a8c-b5d4-823aebe68f7d"
-            />
+            <input type="hidden" name="apikey" value={WEB3FORMS_KEY} />
             <input
               type="hidden"
               name="redirect"
-              value="https://ivf-journey.vercel.app/thank-you"
+              value="https://blog-demo-pi-lac.vercel.app/thank-you"
             />
           </div>
         </div>

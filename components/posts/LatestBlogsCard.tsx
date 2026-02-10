@@ -39,7 +39,7 @@ export default function LatestBlogsCard({ post }: PostProps) {
         <p className="text-xl md:text-2xl mb-20">{previewText}</p>
       </div>
       <div>
-        <MainButton text="Прочети още" href={`/posts/${post.slug}`} />
+        <MainButton text="Read more" href={`/posts/${post.slug}`} />
       </div>
     </div>
   );

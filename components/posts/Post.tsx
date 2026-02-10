@@ -47,7 +47,7 @@ export default async function Post({ slug }: { slug: string }) {
       <div className="relative -top-28 w-full md:w-3/4 xl:w-2/3 h-auto bg-[#F1EFED] mx-auto py-8 px-4 sm:px-12 xl:px-24 shadow-md text-xl">
         <div className="flex justify-between mb-2 sm:mb-10">
           <p>{currentPost.date}</p>
-          <p>Общо показвания {currentPost.views || 0}</p>
+          <p>Views: {currentPost.views || 0}</p>
         </div>
 
         <article>
@@ -58,7 +58,7 @@ export default async function Post({ slug }: { slug: string }) {
           {previousPost && (
             <div className="scale-x-[-1]">
               <SecondaryButton
-                text="Предишен пост"
+                text="Previous post"
                 href={`/posts/${previousPost.slug}`}
                 reverse
               />
@@ -66,7 +66,7 @@ export default async function Post({ slug }: { slug: string }) {
           )}
           {nextPost && (
             <SecondaryButton
-              text="Следващ пост"
+              text="Next post"
               href={`/posts/${nextPost.slug}`}
             />
           )}
