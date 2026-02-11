@@ -1,10 +1,14 @@
+"use client";
+
+import { Suspense, useEffect } from "react";
+
 import Categories from "../posts/Categories";
 import Image from "next/image";
 import Link from "next/link";
-import { Suspense } from "react";
 import close from "@/public/close.svg";
 import { dancePartner } from "@/app/lib/fonts";
 import logo from "@/public/logo.svg";
+import { usePathname } from "next/navigation";
 
 export default function Sidebar({
   open,
@@ -15,6 +19,12 @@ export default function Sidebar({
   setOpen: React.Dispatch<React.SetStateAction<boolean>>;
   menuRef: React.RefObject<HTMLDivElement | null>;
 }) {
+  const pathname = usePathname();
+
+  useEffect(() => {
+    setOpen(false);
+  }, [pathname, setOpen]);
+
   return (
     <nav
       ref={menuRef}

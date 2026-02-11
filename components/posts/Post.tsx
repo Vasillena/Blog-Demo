@@ -54,7 +54,15 @@ export default async function Post({ slug }: { slug: string }) {
           {currentPost.body && <PortableText value={currentPost.body} />}
         </article>
 
-        <div className="flex justify-between mt-20">
+        <div
+          className={`flex mt-20 ${
+            previousPost && nextPost
+              ? "justify-between"
+              : nextPost
+                ? "justify-end"
+                : "justify-start"
+          }`}
+        >
           {previousPost && (
             <div className="scale-x-[-1]">
               <SecondaryButton
