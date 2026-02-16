@@ -61,7 +61,7 @@ export default async function About() {
         <div className="flex justify-center lg:justify-start">
           <MainButton
             text={aboutText.button}
-            href={"https://ivf-journey.site/posts/1-izvnmatochna-bremennost"}
+            href={"https://blog-demo-pi-lac.vercel.app/posts/some-post"}
           />
         </div>
       </div>

@@ -1,6 +1,4 @@
-import Image from "next/image";
 import Link from "next/link";
-import logoSavy from "@/public/savy.svg";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -11,13 +9,9 @@ export default function Footer() {
         Copyright © {currentYear} - All rights reserved
       </p>
       <div className="flex gap-2 justify-center items-center">
-        <p className="text-center font-light my-10">Design & Build by</p>
-        <Link href="https://savy-creations.vercel.app/bg" target="blank">
-          <Image
-            src={logoSavy}
-            alt="Savy logo"
-            className="w-12 mb-0.5 h-auto"
-          />
+        <p className="text-center font-light my-10">Build by</p>
+        <Link href="https://vasilena.space" target="blank">
+          <p>VY</p>
         </Link>
       </div>
     </footer>
